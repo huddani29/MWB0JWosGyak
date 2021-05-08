@@ -15,7 +15,7 @@ int main(){
     
     buf[0] = 0;
     // fifo létrehozása a fájlrendszerben
-    ret = mkfifo("mwb0jw", 0777);	            
+    ret = mkfifo("mwb0jw", 00666);	            
 	if (ret == -1) {
 	    perror("mkfifo() hiba!");
 	    exit(-1);
@@ -29,7 +29,7 @@ int main(){
     }
     // kiolvasás ( ret: kiolvasott mennyiség)
     ret = read(fd, buf, 32);                    
-	printf("kiolvasás\n%s (%d byte)\n", buf, ret);
+	printf("fifobol kiolvasas\n%s (%d byte)\n", buf, ret);
     close(fd);
     // file törlése az fs-rõl
 	unlink("mwb0jw");	                       

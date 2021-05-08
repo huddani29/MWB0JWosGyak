@@ -28,12 +28,12 @@ int main()
 	}
 
 	strcpy(buf, "A hallgato neve: Hudak Daniel");
-	printf("fifoba iras\n%s(%ld byte)\n", buf, strlen(buf));
+	printf("fifoba iras\n%s (%ld byte)\n", buf, strlen(buf));
 	// beírás
 	write(fd, buf, strlen(buf));                
 	// kiolvasás (ret: a sikeres kiolvasás mennyisége)
 	ret = read(fd, buf, 32);                    
-	printf("kiolvasva\n%s (%d byte)\n", buf, ret);
+	printf("fifobol olvasas\n%s (%d byte)\n", buf, ret);
 
 	close(fd);
 	// törlés fs-rõl
@@ -42,6 +42,6 @@ int main()
 
 /*
 irok a fifoba: ezt teszem a fifoba:19
-read() olvasott 19 byteot, ami a kovetkezo: ezt teszem a fifoba
+read() olvasott 19 byteot
 */
 
